@@ -16,6 +16,9 @@ export MANWIDTH=999
 
 Checkout the files
 ```bash
+# ignore untracked files
+dotfiles config --local status.showUntrackedFiles no
+
 dotfiles checkout
 ```
 
