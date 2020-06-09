@@ -28,3 +28,14 @@ sudo apt install -y bspwm dmenu feh
 sudo snap install --edge --devmode polybar-git
 
 sudo snap alias polybar-git polybar
+
+# yabar
+# build dependencies
+sudo apt-get install -y libcairo2-dev libpango1.0-dev libconfig-dev libxcb-randr0-dev libxcb-ewmh-dev libxcb-icccm4-dev libgdk-pixbuf2.0-dev libasound2-dev libiw-dev libxkbcommon-dev libxkbcommon-x11-dev libxcb-xkb-dev
+
+git clone https://github.com/geommer/yabar
+cd yabar
+make yabar
+cp doc/yabar.1.asciidoc doc/yabar.1
+sudo make install
+

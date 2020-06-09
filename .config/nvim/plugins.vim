@@ -40,6 +40,8 @@ call plug#begin('~/.config/nvim/plugged')
     " support for python poetry venv
     " Plug 'petobens/poet-v'
 
+    Plug 'chrisbra/Colorizer'
+
 " Initialize plugin system
 call plug#end()
 

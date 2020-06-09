@@ -4,6 +4,9 @@ set number relativenumber
 " recursive file searches
 set path+=**
 
+" use system clipboard
+set clipboard+=unnamedplus
+
 " enable true terminal colors
 set termguicolors
 
