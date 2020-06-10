@@ -3,7 +3,9 @@
 # tested on manjaro
 
 # install packages
-sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm xorg-server xorg-xinit xorg-xrandr lightdm lightdm-gtk-greeter bspwm sxhkd feh firefox dmenu
+sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm \
+                            xorg-server xorg-xinit xorg-xrandr lightdm lightdm-gtk-greeter bspwm sxhkd feh \
+                            firefox dmenu pulseaudio pulseaudio-alsa alsa-utils
 
 # install powerline fonts
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
