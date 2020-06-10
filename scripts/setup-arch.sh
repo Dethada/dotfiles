@@ -18,6 +18,8 @@ pip3 install --user jedi black
 # yabar
 # will have sudo and pacman prompt
 yay -S --removemake --nodiffmenu --noeditmenu --nouseask --nocleanmenu --noupgrademenu yabar-git
+# chinese font
+yay -S --nodiffmenu --noeditmenu --nouseask --nocleanmenu --noupgrademenu noto-fonts-sc
 
 # lockscreen
 sudo systemctl enable lightdm.service
@@ -33,5 +35,6 @@ if grep -qi vmware /sys/class/dmi/id/product_name; then
   sudo systemctl start vmtoolsd.service
   sudo systemctl enable vmware-vmblock-fuse.service
   sudo systemctl start vmware-vmblock-fuse.service
+  echo 'vwmare-user-suid-wrapper &' >> $HOME/.config/bspwm/bspwmrc
 fi
 sudo systemctl start lightdm.service
