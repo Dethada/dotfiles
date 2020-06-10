@@ -4,7 +4,7 @@
 
 # install packages
 sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm \
-                            xorg-server xorg-xinit xorg-xrandr lightdm lightdm-gtk-greeter bspwm sxhkd feh \
+                            xorg-server xorg-xinit xorg-xrandr bspwm sxhkd feh \
                             firefox dmenu pulseaudio pulseaudio-alsa alsa-utils \
                             noto-fonts-emoji
 
@@ -18,12 +18,9 @@ pip3 install --user jedi black
 
 # yabar
 # will have sudo and pacman prompt
-yay -S --removemake --nodiffmenu --noeditmenu --nouseask --nocleanmenu --noupgrademenu yabar-git
+yes | yay -S --removemake --nodiffmenu --noeditmenu --nouseask --nocleanmenu --noupgrademenu yabar-git
 # chinese font
-yay -S --nodiffmenu --noeditmenu --nouseask --nocleanmenu --noupgrademenu noto-fonts-sc
-
-# lockscreen
-sudo systemctl enable lightdm.service
+yes | yay -S --nodiffmenu --noeditmenu --nouseask --nocleanmenu --noupgrademenu noto-fonts-sc
 
 # dhcp client
 sudo systemctl enable dhcpcd
@@ -39,4 +36,6 @@ if grep -qi vmware /sys/class/dmi/id/product_name; then
   sudo systemctl start vmware-vmblock-fuse.service
   echo 'vwmare-user-suid-wrapper &' >> $HOME/.config/bspwm/bspwmrc
 fi
-sudo systemctl start lightdm.service
+
+# auto run startx when logging in on tty1
+echo 'if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then exec startx; fi' >> $HOME/.bash_profile
