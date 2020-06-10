@@ -5,7 +5,8 @@
 # install packages
 sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm \
                             xorg-server xorg-xinit xorg-xrandr lightdm lightdm-gtk-greeter bspwm sxhkd feh \
-                            firefox dmenu pulseaudio pulseaudio-alsa alsa-utils
+                            firefox dmenu pulseaudio pulseaudio-alsa alsa-utils \
+                            noto-fonts-emoji
 
 # install powerline fonts
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
@@ -30,7 +31,8 @@ sudo systemctl start dhcpcd
 
 # if in vm install vmware tools
 if grep -qi vmware /sys/class/dmi/id/product_name; then
-  sudo pacman -S open-vm-tools xf86-video-vmware gtkmm gtk2
+  sudo pacman -S --noconfirm open-vm-tools xf86-video-vmware mesa gtkmm3 gtk2 \
+                              xf86-input-vmmouse xf86-input-libinput
   sudo systemctl enable vmtoolsd.service
   sudo systemctl start vmtoolsd.service
   sudo systemctl enable vmware-vmblock-fuse.service
