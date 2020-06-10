@@ -4,9 +4,9 @@
 
 # install packages
 sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm \
-                            xorg-server xorg-xinit xorg-xrandr bspwm sxhkd feh \
+                            xorg-server xorg-xinit xorg-xrandr xorg-xsetroot bspwm sxhkd feh \
                             firefox dmenu pulseaudio pulseaudio-alsa alsa-utils \
-                            noto-fonts-emoji
+                            noto-fonts-emoji vifm
 
 # install powerline fonts
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
