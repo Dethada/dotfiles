@@ -1,0 +1,8 @@
+[user]
+    name = David
+    email = david@dzhy.dev
+    signingkey = 17F4CABDC00E5649
+[core]
+    editor = nvim
+[commit]
+    gpgsign = true
