@@ -6,7 +6,7 @@
 sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm \
                             xorg-server xorg-xinit xorg-xrandr xorg-xsetroot bspwm sxhkd feh \
                             firefox dmenu pulseaudio pulseaudio-alsa alsa-utils \
-                            noto-fonts-emoji vifm
+                            noto-fonts-emoji vifm openssh zsh
 
 # install powerline fonts
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
@@ -34,7 +34,7 @@ if grep -qi vmware /sys/class/dmi/id/product_name; then
   sudo systemctl start vmtoolsd.service
   sudo systemctl enable vmware-vmblock-fuse.service
   sudo systemctl start vmware-vmblock-fuse.service
-  echo 'vwmare-user-suid-wrapper &' >> $HOME/.config/bspwm/bspwmrc
+  sed -i '/exec bspwm/i vmware-user-suid-wrapper &' $HOME/.xinitrc
 fi
 
 # auto run startx when logging in on tty1
