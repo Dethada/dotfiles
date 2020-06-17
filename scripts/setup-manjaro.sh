@@ -6,7 +6,7 @@
 sudo pacman -Sy --noconfirm alacritty neovim universal-ctags tmux python-pip nodejs npm \
                             xorg-server xorg-xinit xorg-xrandr xorg-xsetroot bspwm sxhkd feh \
                             firefox dmenu pulseaudio pulseaudio-alsa alsa-utils \
-                            noto-fonts-emoji vifm openssh zsh
+                            noto-fonts-emoji vifm openssh zsh xclip
 
 # install powerline fonts
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
@@ -14,7 +14,7 @@ git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
 rm -rf /tmp/fonts
 
 # coc-python dependencies
-pip3 install --user jedi black
+pip3 install --user jedi black pylint
 
 # yabar
 # will have sudo and pacman prompt
