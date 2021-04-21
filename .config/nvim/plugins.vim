@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Themes
     Plug 'morhetz/gruvbox'
-    Plug 'christianchiarulli/onedark.vim'
+    Plug 'joshdick/onedark.vim'
 
     " fuzzy finder
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
