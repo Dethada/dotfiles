@@ -19,6 +19,9 @@ sudo apt install -y universal-ctags neovim nodejs npm tmux python3-pip
 # coc-python dependencies
 pip3 install --user jedi black
 
+# install vscode
+sudo snap install --classic code
+
 ## awesome wm setup
 sudo apt install -y awesome
 
