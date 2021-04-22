@@ -1,17 +1,23 @@
 #!/bin/bash
 
-# only tested for pop os 
+# only tested for pop os
 
 ## vim and terminal setup
 
-# install alacritty
+# install alacritty and other useful tools
 # sudo add-apt-repository ppa:mmstick76/alacritty # only needed for ubuntu
-sudo apt install -y alacritty
+sudo apt install -y alacritty bat jq curl git
 
 # install powerline fonts
 git clone https://github.com/powerline/fonts.git --depth=1 /tmp/fonts
 /tmp/fonts/install.sh
 rm -rf /tmp/fonts
+
+# install zsh
+sudo apt install -y zsh
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+sudo chsh -s $(which zsh) $USER
 
 # install neovim and dependencies
 sudo apt install -y universal-ctags neovim nodejs npm tmux python3-pip
