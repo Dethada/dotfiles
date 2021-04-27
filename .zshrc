@@ -54,24 +54,28 @@ zstyle :prompt:pure:git:stash show yes
 
 # aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='ls --color=auto'
+alias ls='exa'
 alias ll='ls -la'
+alias cat='bat'
+alias vim='nvim'
 
 # BAT
-zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"alias cat=bat"
-zinit light sharkdp/bat
+# zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"alias cat=bat"
+# zinit light sharkdp/bat
 
 # RIPGREP
-zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
-zinit light BurntSushi/ripgrep
+# zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
+# zinit light BurntSushi/ripgrep
+
+# tries first to complete the current word exactly as its written, before trying case-insensitive or other matches
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# highlight the current option in the menu list instead of filling it in the prompt
+zstyle ':completion:*' menu select
 
 # use nvim as manpager `:h Man`
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 export EDITOR='nvim'
 export VISUAL=$EDITOR
-
-# tries first to complete the current word exactly as its written, before trying case-insensitive or other matches
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-# highlight the current option in the menu list instead of filling it in the prompt
-zstyle ':completion:*' menu select
+export PATH="/opt/homebrew/bin:$PATH"
+export GPG_TTY=$(tty)

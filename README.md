@@ -27,6 +27,10 @@ Run the setup script
 ~/setup-system.sh
 ```
 
+## OSX
+
+Use [karabiner-elements](https://github.com/pqrs-org/Karabiner-Elements) to modify key mappings (Useful for using colemak layout).
+
 ## Vim Notes
 ```
 # change line surrounding to "

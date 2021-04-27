@@ -17,8 +17,9 @@ nmap <leader>gi <Plug>(coc-implementation)
 
 " coc config
 let g:coc_global_extensions = [
-	\ 'coc-python',
+	\ 'coc-jedi',
 	\ 'coc-json',
+    \ 'coc-tsserver',
     \ 'coc-marketplace',
 	\ ]
 
