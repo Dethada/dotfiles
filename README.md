@@ -26,6 +26,8 @@ Run the setup script
 ```bash
 ~/setup-system.sh
 ```
+## Tmux
+Press prefix + I (capital i, as in Install) to fetch plugins.
 
 ## OSX
 

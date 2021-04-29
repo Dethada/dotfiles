@@ -18,6 +18,8 @@ set copyindent      " copy indent from the previous line
 set hidden          " allow switching from modified buffers
 set ignorecase      " ignore case when searching
 set smartcase       " case insensitive search until caps is used}}}
+set scrolloff=10     " start scrolling when cursor is 8 lines away from bottom
+set signcolumn=yes
 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2

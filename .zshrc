@@ -79,3 +79,8 @@ export EDITOR='nvim'
 export VISUAL=$EDITOR
 export PATH="/opt/homebrew/bin:$PATH"
 export GPG_TTY=$(tty)
+
+# launch tmux automatically if in a interactive terminal
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  # exec tmux
+# fi
