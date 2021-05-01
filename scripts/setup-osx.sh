@@ -6,8 +6,8 @@ echo 'export PATH="/opt/homebrew/bin:$PATH"' >> $HOME/.zshrc
 export PATH="/opt/homebrew/bin:$PATH"
 
 softwareupdate --install-rosetta # required for docker
-brew install node tmux neovim exa bat ripgrep code jq fd wget poetry tree docker-compose ctags go gnupg fzf vifm
-brew install --cask visual-studio-code iterm2 telegram whatsapp obsidian docker insomnia
+brew install node tmux neovim exa bat ripgrep code jq fd wget poetry tree docker-compose ctags go gnupg fzf vifm gh svn
+brew install --cask visual-studio-code iterm2 telegram whatsapp obsidian docker insomnia font-hack-nerd-font
 
 pip3 install --user jedi black pylint isort jedi-language-server
 

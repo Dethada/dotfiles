@@ -40,7 +40,19 @@ call plug#begin('~/.config/nvim/plugged')
     " support for python poetry venv
     " Plug 'petobens/poet-v'
 
-    Plug 'chrisbra/Colorizer'
+	" show color preview for hex/rgb values
+	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+	" visually show undo tree
+	Plug 'mbbill/undotree'
+
+    " File browser
+    Plug 'preservim/nerdtree'
+
+    " Nerdtree filetype colors
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    " devicons always load this last
+    Plug 'ryanoasis/vim-devicons'
 
 " Initialize plugin system
 call plug#end()
