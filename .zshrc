@@ -1,5 +1,4 @@
 # Set up the prompt
-
 setopt histignorealldups # ignore duplicated commands history list
 setopt sharehistory # share command history data
 setopt always_to_end # cursor moved to the end in full completion
@@ -84,3 +83,15 @@ export GPG_TTY=$(tty)
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   # exec tmux
 # fi
+
+# icons for lf
+if [ -f $HOME/.config/lf/icons ]; then
+    source $HOME/.config/lf/icons
+fi
+
+# navi shell widget
+eval "$(navi widget zsh)"
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/scripts
