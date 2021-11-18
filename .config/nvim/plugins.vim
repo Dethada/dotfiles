@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
     Plug 'wellle/targets.vim'
+    Plug 'terryma/vim-multiple-cursors'
 
     " Themes
     Plug 'joshdick/onedark.vim'
