@@ -26,4 +26,7 @@ nvim --headless +PlugClean! +qall
 nvim --headless +PlugUpdate +qall
 nvim --headless +PlugUpgrade +qall
 
+zinit update
+
+echo 'Sudoing...'
 sudo softwareupdate -l
