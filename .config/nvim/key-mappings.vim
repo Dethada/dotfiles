@@ -36,6 +36,3 @@ nmap <S-Tab> :bprevious<CR>
 " close buffer while keeping window open
 " nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 nnoremap <silent> <leader>q :bp\|bd #<CR>
-
-" open list of open buffers
-nnoremap <silent> <leader>b :Buffers<CR>

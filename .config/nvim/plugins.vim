@@ -13,16 +13,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'wellle/targets.vim'
 
     " Themes
-    Plug 'morhetz/gruvbox'
     Plug 'joshdick/onedark.vim'
 
-    " fuzzy finder
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
+    " Telescope
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 
     " status bar
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'nvim-lualine/lualine.nvim'
 
     " git stuff
     Plug 'airblade/vim-gitgutter'
@@ -52,7 +50,8 @@ call plug#begin('~/.config/nvim/plugged')
     " Nerdtree filetype colors
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     " devicons always load this last
-    Plug 'ryanoasis/vim-devicons'
+    " Plug 'ryanoasis/vim-devicons'
+    Plug 'kyazdani42/nvim-web-devicons'
 
 " Initialize plugin system
 call plug#end()
