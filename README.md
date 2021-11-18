@@ -1,5 +1,7 @@
 # Dotfiles
 
+![vim screenshot](vim.png)
+
 Clone this repo
 ```bash
 git clone --bare https://github.com/PotatoDrug/dotfiles.git $HOME/.dotfiles
