@@ -14,17 +14,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'terryma/vim-multiple-cursors'
     Plug 'phaazon/hop.nvim'
     Plug 'ggandor/lightspeed.nvim'
-
-    " Themes
-    " Plug 'joshdick/onedark.vim'
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'psliwka/vim-smoothie'
+    Plug 'jiangmiao/auto-pairs'
 
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-
-    " status bar
-    Plug 'nvim-lualine/lualine.nvim'
 
     " git stuff
     Plug 'airblade/vim-gitgutter'
@@ -42,14 +38,16 @@ call plug#begin('~/.config/nvim/plugged')
     " support for python poetry venv
     " Plug 'petobens/poet-v'
 
-	" show color preview for hex/rgb values
-	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+    " visually show undo tree
+    Plug 'mbbill/undotree'
 
-	" visually show undo tree
-	Plug 'mbbill/undotree'
-
+    " Themes
+    " Plug 'joshdick/onedark.vim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'nvim-lualine/lualine.nvim'
+    " show color preview for hex/rgb values
+    Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
     " devicons always load this last
-    " Plug 'ryanoasis/vim-devicons'
     Plug 'kyazdani42/nvim-web-devicons'
 
 " Initialize plugin system

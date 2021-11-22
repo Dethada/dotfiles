@@ -28,6 +28,7 @@ set undofile        " store undos persistently on disk (default dir ~/.local/sha
 " set listchars=tab:»,extends:>,precedes:<,nbsp:·,trail:·
 set list listchars=tab:»-,extends:>,precedes:<,nbsp:·,trail:·
 set colorcolumn=100
+set textwidth=100
 
 augroup customtabs
     autocmd!
