@@ -12,9 +12,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'wellle/targets.vim'
     Plug 'terryma/vim-multiple-cursors'
+    Plug 'phaazon/hop.nvim'
+    Plug 'ggandor/lightspeed.nvim'
 
     " Themes
-    Plug 'joshdick/onedark.vim'
+    " Plug 'joshdick/onedark.vim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
@@ -45,11 +48,6 @@ call plug#begin('~/.config/nvim/plugged')
 	" visually show undo tree
 	Plug 'mbbill/undotree'
 
-    " File browser
-    Plug 'preservim/nerdtree'
-
-    " Nerdtree filetype colors
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     " devicons always load this last
     " Plug 'ryanoasis/vim-devicons'
     Plug 'kyazdani42/nvim-web-devicons'
