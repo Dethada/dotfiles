@@ -71,6 +71,13 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 # highlight the current option in the menu list instead of filling it in the prompt
 zstyle ':completion:*' menu select
 
+# ssh-agent
+if [ -z "$SSH_AUTH_SOCK"  ] ; then
+    eval $(ssh-agent -s)
+    ssh-add
+    trap "kill $SSH_AGENT_PID" 0
+fi
+
 # use nvim as manpager `:h Man`
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
