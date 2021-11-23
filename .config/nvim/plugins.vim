@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'wellle/targets.vim'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'phaazon/hop.nvim'
-    Plug 'ggandor/lightspeed.nvim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'psliwka/vim-smoothie'
     Plug 'jiangmiao/auto-pairs'
