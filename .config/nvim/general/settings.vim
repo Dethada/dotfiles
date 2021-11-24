@@ -41,3 +41,11 @@ augroup autotrimwhitespace
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
+
+" use windows clipboard if in wsl
+if system('uname -r') =~ "microsoft"
+    augroup Yank
+        autocmd!
+        autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+        augroup END
+endif
