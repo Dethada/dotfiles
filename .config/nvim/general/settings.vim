@@ -35,6 +35,8 @@ augroup customtabs
     autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType jsonc setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType json setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
 augroup autotrimwhitespace

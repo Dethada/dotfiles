@@ -10,8 +10,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-unimpaired'
     Plug 'wellle/targets.vim'
-    Plug 'terryma/vim-multiple-cursors'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
     Plug 'phaazon/hop.nvim'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'psliwka/vim-smoothie'
@@ -23,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " git stuff
     Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
 
     " auto complete and definitions
     Plug 'neoclide/coc.nvim', {'branch': 'release'}

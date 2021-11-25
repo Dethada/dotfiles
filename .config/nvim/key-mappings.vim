@@ -37,6 +37,3 @@ nmap <S-Tab> :bprevious<CR>
 " nnoremap <silent> <leader>q :lclose<bar>b#<bar>bd #<CR>
 nnoremap <silent> <leader>q :bp\|bd #<CR>
 
-" move line up or down
-nnoremap <silent> <leader>m :m+<CR>
-nnoremap <silent> <leader>M :m-2<CR>
