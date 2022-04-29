@@ -16,3 +16,4 @@ source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 luafile $HOME/.config/nvim/themes/lualine.lua
 luafile $HOME/.config/nvim/plug-config/hop.lua
+luafile $HOME/.config/nvim/plug-config/treesitter.lua

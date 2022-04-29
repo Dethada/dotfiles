@@ -18,6 +18,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'psliwka/vim-smoothie'
     Plug 'jiangmiao/auto-pairs'
 
+    " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     " Telescope
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -34,8 +37,6 @@ call plug#begin('~/.config/nvim/plugged')
     " show the tags of the current file
     Plug 'majutsushi/tagbar'
 
-    " programming language pack
-    Plug 'sheerun/vim-polyglot'
     " support for python poetry venv
     " Plug 'petobens/poet-v'
 
@@ -43,7 +44,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mbbill/undotree'
 
     " Themes
-    " Plug 'joshdick/onedark.vim'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'nvim-lualine/lualine.nvim'
     " show color preview for hex/rgb values
