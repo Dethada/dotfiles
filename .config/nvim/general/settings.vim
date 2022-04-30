@@ -25,6 +25,7 @@ set signcolumn=yes  " extra column for git status
 set updatetime=1000 " number of ms for vim to update to swap file (for plugins like gitgutter)
 set noswapfile      " disable swap files
 set undofile        " store undos persistently on disk (default dir ~/.local/share/nvim/undo)
+set laststatus=3    " global status line
 " set listchars=tab:»,extends:>,precedes:<,nbsp:·,trail:·
 set list listchars=tab:»-,extends:>,precedes:<,nbsp:·,trail:·
 set colorcolumn=100
