@@ -1,0 +1,8 @@
+require('plug-config/treesitter')
+require('plug-config/nvim-cmp')
+require('plug-config/comment')
+require('plug-config/hop')
+require('plug-config/hexokinase')
+require('plug-config/tagbar')
+require('plug-config/undotree')
+require('plug-config/telescope')

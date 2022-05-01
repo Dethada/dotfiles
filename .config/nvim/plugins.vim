@@ -46,7 +46,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'saadparwaiz1/cmp_luasnip'
 
     " comment out code
-    Plug 'preservim/nerdcommenter'
+    Plug 'numToStr/Comment.nvim'
 
     " show the tags of the current file
     Plug 'majutsushi/tagbar'
