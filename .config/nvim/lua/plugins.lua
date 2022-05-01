@@ -1,8 +1,8 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 vim.cmd([[
@@ -23,12 +23,12 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-unimpaired'
     use 'wellle/targets.vim'
-    use {'mg979/vim-visual-multi', branch = 'master'}
-    use 'phaazon/hop.nvim'
-    use 'editorconfig/editorconfig-vim'
-    use 'psliwka/vim-smoothie'
-    use 'jiangmiao/auto-pairs'
+    use { 'mg979/vim-visual-multi', branch = 'master' }
     use 'ntpeters/vim-better-whitespace'
+    use 'editorconfig/editorconfig-vim'
+    use 'phaazon/hop.nvim'
+    use 'karb94/neoscroll.nvim'
+    use { 'windwp/nvim-autopairs', requires = { 'hrsh7th/nvim-cmp' } }
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -36,8 +36,12 @@ return require('packer').startup(function()
     -- Telescope
     use 'nvim-lua/plenary.nvim'
     use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+    use {
+        'nvim-telescope/telescope-file-browser.nvim',
+        requires = { 'nvim-telescope/telescope.nvim' }
     }
 
     -- git stuff
@@ -49,16 +53,24 @@ return require('packer').startup(function()
     use 'williamboman/nvim-lsp-installer'
 
     -- Auto completion stuff
-    use 'hrsh7th/nvim-cmp'
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = { 'L3MON4D3/LuaSnip' }
+    }
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lua'
+    use {
+        'onsails/lspkind.nvim',
+        requires = 'hrsh7th/nvim-cmp'
+    } -- icons for nvim-cmp
 
     -- luasnip required for nvim-cmp
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- comment out code
     use 'numToStr/Comment.nvim'
@@ -72,11 +84,14 @@ return require('packer').startup(function()
     -- visually show undo tree
     use 'mbbill/undotree'
 
+    -- show key mappings
+    use 'folke/which-key.nvim'
+
     -- Themes
-    use {'folke/tokyonight.nvim', branch = 'main' }
+    use { 'folke/tokyonight.nvim', branch = 'main' }
     use 'nvim-lualine/lualine.nvim'
     -- show color preview for hex/rgb values
-    use {'rrethy/vim-hexokinase', run = 'make hexokinase' }
+    use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
     -- devicons always load this last
     use 'kyazdani42/nvim-web-devicons'
 end)

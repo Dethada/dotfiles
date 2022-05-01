@@ -12,7 +12,7 @@ vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<C
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -35,12 +35,15 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 lspconfig.sumneko_lua.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 lspconfig.rust_analyzer.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 lspconfig.pyright.setup {
+    capabilities = capabilities,
     on_attach = on_attach,
 }
 lspconfig.tsserver.setup {
@@ -48,4 +51,3 @@ lspconfig.tsserver.setup {
     on_attach = on_attach,
 }
 
--- vim.api.nvim_command('echo "Hello"')
