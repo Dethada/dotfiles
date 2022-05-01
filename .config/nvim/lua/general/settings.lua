@@ -33,17 +33,6 @@ vim.o.textwidth = 100
 vim.o.splitbelow = true -- force all horizontal splits to go below current windows
 vim.o.splitright = true -- force all vertical splits to go to the right of current window
 
--- " Trim Whitespaces
--- function! TrimWhitespace()
---     let l:save = winsaveview()
---     %s/\\\@<!\s\+$//e
---     call winrestview(l:save)
--- endfunction
--- augroup autotrimwhitespace
---     autocmd!
---     autocmd BufWritePre * :call TrimWhitespace()
--- augroup END
-
 -- use windows clipboard if in wsl
 if vim.fn.has('wsl') == 1 then
     local yankGrp = vim.api.nvim_create_augroup('Yank', { clear = true })

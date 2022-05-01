@@ -1,4 +1,4 @@
--- vim.keymap.set('n', '<Leader>t', '<Cmd>call TrimWhitespace()<CR>')
+vim.keymap.set('n', '<Leader>t', '<Cmd>StripWhitespace<CR>')
 
 -- move lines up and down with formatting
 vim.keymap.set('v', 'J', [[:m '>+1<CR>gv=gv]])
