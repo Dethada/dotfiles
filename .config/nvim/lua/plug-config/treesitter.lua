@@ -47,10 +47,14 @@ require 'nvim-treesitter.configs'.setup {
                 -- You can use the capture groups defined in textobjects.scm
                 ["af"] = "@function.outer",
                 ["if"] = "@function.inner",
-                ["ac"] = "@class.outer",
-                ["ic"] = "@class.inner",
+                ["aC"] = "@class.outer",
+                ["iC"] = "@class.inner",
                 ["al"] = "@loop.outer",
                 ["il"] = "@loop.inner",
+                ["acl"] = "@call.outer",
+                ["icl"] = "@call.inner",
+                ["acd"] = "@conditional.outer",
+                ["icd"] = "@conditional.inner",
             },
         }
     },
