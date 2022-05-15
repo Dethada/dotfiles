@@ -29,9 +29,16 @@ return require('packer').startup(function()
     use 'phaazon/hop.nvim'
     use 'karb94/neoscroll.nvim'
     use { 'windwp/nvim-autopairs', requires = { 'hrsh7th/nvim-cmp' } }
+    use {
+        "AckslD/nvim-neoclip.lua",
+        requires = {
+            { 'nvim-telescope/telescope.nvim' },
+        }
+    }
 
     -- Treesitter
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter-textobjects' }
 
     -- Telescope
     use 'nvim-lua/plenary.nvim'
