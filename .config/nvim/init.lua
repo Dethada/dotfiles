@@ -1,0 +1,5 @@
+require 'plugins'
+require 'plug-config'
+require 'lsp'
+require 'general'
+require 'theme'
