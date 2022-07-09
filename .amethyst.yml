@@ -1,0 +1,15 @@
+# Use tall and fullscreen layouts
+layouts:
+    - bsp
+
+mod1:
+    - option
+    - shift
+mod2:
+    - option
+    - shift
+    - control
+
+window-margins: true
+smart-window-margins: true
+window-margin-size: 10
