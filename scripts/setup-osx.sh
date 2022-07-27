@@ -9,7 +9,7 @@ softwareupdate --install-rosetta # required for docker
 
 brew tap homebrew/cask-fonts
 brew install node tmux neovim exa bat ripgrep code jq fd wget poetry tree docker-compose ctags go gnupg fzf gh svn \
-             lf poppler navi exiftool highlight youtube-dl openjdk clojure entr
+             lf poppler navi exiftool highlight youtube-dl openjdk clojure entr sox
 brew install --cask visual-studio-code iterm2 telegram whatsapp obsidian docker insomnia
 font-hack-nerd-font mactex-no-gui zotero discord zoom whichspace amethyst
 
