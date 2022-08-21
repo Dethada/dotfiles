@@ -103,4 +103,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/Library/Python/3.8/bin
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 [ -f "/home/david/.ghcup/env" ] && source "/home/david/.ghcup/env" # ghcup-env
