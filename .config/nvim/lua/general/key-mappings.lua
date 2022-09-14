@@ -28,4 +28,7 @@ vim.keymap.set('n', '<Tab>', '<Cmd>bnext<CR>')
 vim.keymap.set('n', '<S-Tab>', '<Cmd>bprevious<CR>')
 
 -- close buffer while keeping window open
--- vim.keymap.set('n', '<Leader>q', '<Cmd>bp|bd #<CR>')
+vim.keymap.set('n', '<Space>q', '<Cmd>bp|bd #<CR>')
+
+-- paste in visual mode while keeping current paste register
+vim.keymap.set('x', '<Space>p', '"_dP')
