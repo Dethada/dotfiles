@@ -11,8 +11,8 @@ brew tap homebrew/cask-fonts
 brew install node tmux neovim exa bat ripgrep code jq fd wget poetry tree docker-compose ctags go gnupg fzf gh svn \
              lf poppler navi exiftool highlight youtube-dl openjdk jdtls google-java-format clojure entr sox grip
 brew install --cask visual-studio-code iterm2 telegram whatsapp obsidian docker insomnia \
-    unnaturalscrollwheels font-hack-nerd-font mactex-no-gui zotero discord zoom whichspace \
-    betterdisplay protonvpn figma rectangle todoist
+    unnaturalscrollwheels font-hack-nerd-font mactex-no-gui zotero discord zoom \
+    betterdisplay protonvpn figma rectangle todoist transmission
 
 pip3 install --user jedi black pylint isort jedi-language-server pdftotext
 
@@ -25,7 +25,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 $HOME/.tmux/plugins/tpm/bin/install_plugins
 
 # install nvim plugins
-nvim --headless +PlugInstall +qall
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 # cht.sh script
 curl https://cht.sh/:cht.sh -o $HOME/scripts/cht-core.sh

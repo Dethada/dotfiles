@@ -22,9 +22,7 @@ $HOME/.tmux/plugins/tpm/bin/clean_plugins
 $HOME/.tmux/plugins/tpm/bin/update_plugins all
 
 # vim plugins
-nvim --headless +PlugClean! +qall
-nvim --headless +PlugUpdate +qall
-nvim --headless +PlugUpgrade +qall
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 zinit update
 
