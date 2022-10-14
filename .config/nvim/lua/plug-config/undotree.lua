@@ -5,5 +5,5 @@ vim.g['undotree_ShortIndicators'] = 1
 local wk = require('which-key')
 
 wk.register({
-  ["<leader>u"] = { '<Cmd>UndotreeToggle<CR>', 'Undotree Toggle' },
+  ["<space>u"] = { '<Cmd>UndotreeToggle<CR>', 'Undotree Toggle' },
 })
