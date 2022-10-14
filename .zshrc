@@ -99,6 +99,9 @@ fi
 # navi shell widget
 eval "$(navi widget zsh)"
 
+# load zoxide
+eval "$(zoxide init zsh)"
+
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/scripts
