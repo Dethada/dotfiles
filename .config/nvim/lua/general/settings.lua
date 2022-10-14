@@ -11,6 +11,9 @@ vim.o.clipboard = 'unnamedplus'
 -- enable true terminal colors
 vim.o.termguicolors = true
 
+-- disable mouse
+vim.opt.mouse = nil
+
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
