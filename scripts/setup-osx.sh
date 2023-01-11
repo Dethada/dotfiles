@@ -12,7 +12,7 @@ brew install node tmux neovim exa bat ripgrep code jq fd wget poetry tree docker
              lf poppler navi exiftool highlight youtube-dl openjdk jdtls google-java-format clojure entr sox grip zoxide
 brew install --cask visual-studio-code iterm2 telegram whatsapp obsidian docker insomnia \
     unnaturalscrollwheels font-hack-nerd-font mactex-no-gui zotero discord zoom \
-    betterdisplay protonvpn figma rectangle todoist transmission
+    betterdisplay protonvpn figma rectangle transmission
 
 pip3 install --user jedi black pylint isort jedi-language-server pdftotext
 

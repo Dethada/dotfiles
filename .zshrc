@@ -101,6 +101,7 @@ eval "$(navi widget zsh)"
 
 # load zoxide
 eval "$(zoxide init zsh)"
+alias cd='z'
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
