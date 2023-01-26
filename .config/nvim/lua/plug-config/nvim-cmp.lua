@@ -70,7 +70,6 @@ cmp.setup({
     }, {
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'cmdline' },
         { name = 'nvim_lua' },
     }),
     formatting = {

@@ -94,6 +94,9 @@ return require('packer').startup(function()
     -- show key mappings
     use 'folke/which-key.nvim'
 
+    -- latex
+    use 'lervag/vimtex'
+
     -- Themes
     use { 'folke/tokyonight.nvim', branch = 'main' }
     use 'nvim-lualine/lualine.nvim'
