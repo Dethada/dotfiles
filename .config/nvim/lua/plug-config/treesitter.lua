@@ -6,7 +6,9 @@ require 'nvim-treesitter.configs'.setup {
     sync_install = false,
 
     -- List of parsers to ignore installing (for "all")
-    ignore_install = { 'phpdoc', 'tree-sitter-phpdoc' }, -- error on m1
+    -- phpdoc and tree-sitter-phpdoc errors on m1
+    -- use vimtex syntax highlighter for vimtex features
+    ignore_install = { 'phpdoc', 'tree-sitter-phpdoc', 'latex' },
 
     highlight = {
         -- `false` will disable the whole extension

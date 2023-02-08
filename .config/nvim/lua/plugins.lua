@@ -79,6 +79,9 @@ return require('packer').startup(function()
     use 'saadparwaiz1/cmp_luasnip'
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+    -- copliot
+    use 'github/copilot.vim'
+
     -- comment out code
     use 'numToStr/Comment.nvim'
 
@@ -96,6 +99,9 @@ return require('packer').startup(function()
 
     -- latex
     use 'lervag/vimtex'
+
+    -- Lean 4 Theorem Prover
+    use 'Julian/lean.nvim'
 
     -- Themes
     use { 'folke/tokyonight.nvim', branch = 'main' }
