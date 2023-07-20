@@ -56,8 +56,13 @@ return require('packer').startup(function()
     use 'tpope/vim-fugitive'
 
     -- LSP stuff
+    -- use 'williamboman/nvim-lsp-installer'
+    use {
+    "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
+    use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
 
     -- Auto completion stuff
     use {
@@ -105,6 +110,7 @@ return require('packer').startup(function()
 
     -- Themes
     use { 'folke/tokyonight.nvim', branch = 'main' }
+    use { "catppuccin/nvim", as = "catppuccin" }
     use 'nvim-lualine/lualine.nvim'
     -- show color preview for hex/rgb values
     use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }

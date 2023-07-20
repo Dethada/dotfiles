@@ -35,7 +35,7 @@ end
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-lspconfig.sumneko_lua.setup {
+lspconfig.lua_ls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }

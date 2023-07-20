@@ -1,2 +1,3 @@
 require 'theme/lualine'
-require 'theme/tokyonight'
+-- require 'theme/tokyonight'
+vim.cmd.colorscheme 'catppuccin-macchiato'
