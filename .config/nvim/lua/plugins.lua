@@ -108,6 +108,31 @@ return require('packer').startup(function()
     -- latex
     use 'lervag/vimtex'
 
+    -- Neo org
+    use {
+        "nvim-neorg/neorg",
+        -- tag = "*",
+        -- ft = "norg",
+        -- after = "nvim-treesitter", -- You may want to specify Telescope here as well
+        config = function()
+            require('neorg').setup {
+                load = {
+                    ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = { -- Manages Neorg workspaces
+                        config = {
+                            workspaces = {
+                                notes = "~/notes",
+                            },
+                        },
+                    },
+                },
+            }
+        end,
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    }
+
     -- Lean 4 Theorem Prover
     use 'Julian/lean.nvim'
 
