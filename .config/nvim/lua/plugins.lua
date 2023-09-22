@@ -52,7 +52,10 @@ return require('packer').startup(function()
     }
 
     -- git stuff
-    use 'airblade/vim-gitgutter'
+    use {
+        'airblade/vim-gitgutter',
+        branch = 'main'
+    }
     use 'tpope/vim-fugitive'
 
     -- LSP stuff
