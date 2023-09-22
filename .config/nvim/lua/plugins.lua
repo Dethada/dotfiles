@@ -133,6 +133,9 @@ return require('packer').startup(function()
         requires = "nvim-lua/plenary.nvim",
     }
 
+    -- Code Snippet runner
+    use { 'michaelb/sniprun', run = 'sh ./install.sh'}
+
     -- Lean 4 Theorem Prover
     use 'Julian/lean.nvim'
 
