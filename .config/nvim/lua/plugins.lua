@@ -29,6 +29,7 @@ return require('packer').startup(function()
     use 'phaazon/hop.nvim'
     use 'karb94/neoscroll.nvim'
     use { 'windwp/nvim-autopairs', requires = { 'hrsh7th/nvim-cmp' } }
+    use 'lukas-reineke/indent-blankline.nvim'
     use {
         "AckslD/nvim-neoclip.lua",
         requires = {
