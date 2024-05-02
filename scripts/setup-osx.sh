@@ -8,11 +8,16 @@ export PATH="/opt/homebrew/bin:$PATH"
 softwareupdate --install-rosetta # required for docker
 
 brew tap homebrew/cask-fonts
+brew tap FelixKratz/formulae
+brew tap koekeishiya/formulae
 brew install node tmux neovim exa bat ripgrep code jq fd wget poetry tree docker-compose ctags go gnupg fzf gh svn \
-             lf poppler navi exiftool highlight yt-dlp openjdk jdtls google-java-format clojure entr sox grip zoxide
+             lf poppler navi exiftool highlight yt-dlp openjdk jdtls google-java-format clojure entr sox grip zoxide \
+             stats sketchybar yabai skhd ncspot
 brew install --cask visual-studio-code iterm2 telegram whatsapp obsidian docker insomnia \
     unnaturalscrollwheels font-hack-nerd-font mactex-no-gui skim zotero discord zoom \
     betterdisplay protonvpn figma rectangle transmission
+
+brew services start yabai skhd sketchybar
 
 pip3 install --user jedi black pylint isort jedi-language-server pdftotext
 
