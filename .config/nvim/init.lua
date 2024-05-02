@@ -1,5 +1,8 @@
-require 'plugins'
-require 'plug-config'
-require 'lsp'
-require 'general'
-require 'theme'
+-- General key maps
+require('core.keymaps')
+
+-- Other options
+require('core.options')
+
+-- Plugin management with lazy.nvim
+require('core.lazy')
