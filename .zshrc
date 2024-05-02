@@ -53,7 +53,7 @@ zstyle :prompt:pure:git:stash show yes
 
 # aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='exa'
+alias ls='eza'
 alias ll='ls -la'
 alias cat='bat'
 alias vim='nvim'
