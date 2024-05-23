@@ -4,9 +4,11 @@
     signingkey = 17F4CABDC00E5649
 [core]
     editor = nvim
+    autocrlf = false
+    eol = lf
 [commit]
     gpgsign = true
 [pull]
-	rebase = true
+    rebase = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
