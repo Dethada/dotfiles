@@ -12,7 +12,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.termguicolors = true
 
 -- disable mouse
-vim.opt.mouse = nil
+vim.opt.mouse = ''
 
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
@@ -31,7 +31,6 @@ vim.o.undofile = true -- store undos persistently on disk (~/.local/share/nvim/u
 vim.o.laststatus = 3 -- global status line
 vim.o.list = true
 vim.o.listchars = 'tab:»-,extends:>,precedes:<,nbsp:·,trail:·'
-vim.o.colorcolumn = 100
 vim.o.textwidth = 100
 vim.o.splitbelow = true -- force all horizontal splits to go below current windows
 vim.o.splitright = true -- force all vertical splits to go to the right of current window
