@@ -1,10 +1,8 @@
 # Dotfiles
 
-![vim screenshot](vim.png)
-
 Clone this repo
 ```bash
-git clone --bare https://github.com/PotatoDrug/dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/Dethada/dotfiles.git $HOME/.dotfiles
 ```
 
 Add the following to your `.bashrc` and source it.
