@@ -51,6 +51,13 @@ zinit light sindresorhus/pure
 # show git stash icon
 zstyle :prompt:pure:git:stash show yes
 
+# WSL only config
+if uname -r | grep -iq 'Microsoft' ; then
+    export USERPROFILE='/mnt/c/Users/zhyda'
+    alias windots='/usr/bin/git --git-dir=$USERPROFILE/.dotfiles --work-tree=$USERPROFILE'
+    alias open='wsl-open'
+fi
+
 # aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='eza'
@@ -72,11 +79,26 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' menu select
 
 # ssh-agent
-if [ -z "$SSH_AUTH_SOCK"  ] ; then
-    eval $(ssh-agent -s)
-    ssh-add
-    trap "kill $SSH_AGENT_PID" 0
-fi
+load_ssh_agent ()
+{
+    if [ -z "$SSH_AUTH_SOCK"  ] ; then
+        eval $(ssh-agent -s)
+        ssh-add
+        trap "kill $SSH_AGENT_PID" 0
+        echo "SSH Agent loaded"
+    else
+        echo "SSH Agent already loaded"
+    fi
+}
+
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
 
 # use nvim as manpager `:h Man`
 export MANPAGER='nvim +Man!'
@@ -85,6 +107,7 @@ export EDITOR='nvim'
 export VISUAL=$EDITOR
 export PATH="/opt/homebrew/bin:$PATH"
 export GPG_TTY=$(tty)
+export TERM=xterm-256color
 
 # launch tmux automatically if in a interactive terminal
 # if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
@@ -99,7 +122,7 @@ fi
 # navi shell widget
 eval "$(navi widget zsh)"
 
-# load zoxide
+# zoxide
 eval "$(zoxide init zsh)"
 alias cd='z'
 
