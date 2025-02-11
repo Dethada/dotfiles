@@ -65,14 +65,6 @@ alias ll='ls -la'
 alias cat='bat'
 alias vim='nvim'
 
-# BAT
-# zinit ice from"gh-r" as"program" mv"bat* -> bat" pick"bat/bat" atload"alias cat=bat"
-# zinit light sharkdp/bat
-
-# RIPGREP
-# zinit ice from"gh-r" as"program" mv"ripgrep* -> ripgrep" pick"ripgrep/rg"
-# zinit light BurntSushi/ripgrep
-
 # tries first to complete the current word exactly as its written, before trying case-insensitive or other matches
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # highlight the current option in the menu list instead of filling it in the prompt
@@ -109,16 +101,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 export GPG_TTY=$(tty)
 export TERM=xterm-256color
 
-# launch tmux automatically if in a interactive terminal
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  # exec tmux
-# fi
-
-# icons for lf
-if [ -f $HOME/.config/lf/icons ]; then
-    source $HOME/.config/lf/icons
-fi
-
 # navi shell widget
 eval "$(navi widget zsh)"
 
@@ -130,6 +112,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/Library/Python/3.8/bin
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-[ -f "/home/david/.ghcup/env" ] && source "/home/david/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
