@@ -118,3 +118,5 @@ export PATH=$PATH:$HOME/.local/bin
 
 eval "$(atuin init zsh)"
 
+eval "$(pay-respects zsh --alias)"
+

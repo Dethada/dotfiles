@@ -7,6 +7,8 @@ sudo pacman -Sy --noconfirm neovim universal-ctags tmux nodejs npm base-devel cl
     wezterm \
     python python-pip python-black python-isort
 
+paru -S pay-respects-bin
+
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
