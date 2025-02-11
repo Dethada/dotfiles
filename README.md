@@ -50,7 +50,7 @@ Use [karabiner-elements](https://github.com/pqrs-org/Karabiner-Elements) to modi
 
 ## Linux Xserver
 - WM: Bspwm
-- Bar: Nil
+- Bar: polybar
 - Hotkey Daemon: sxhkd
 
 ## Windows
