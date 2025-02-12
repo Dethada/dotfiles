@@ -110,8 +110,8 @@ return {
         config = function()
             local wk = require('which-key')
 
-        wk.register({
-            ["<space>t"] = { '<Cmd>TagbarToggle<CR>', 'Tagbar Toggle' },
+        wk.add({
+            { "<space>t", "<Cmd>TagbarToggle<CR>", desc = "Tagbar Toggle" },
         })
         end,
     },

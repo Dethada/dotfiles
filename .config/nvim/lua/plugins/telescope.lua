@@ -11,30 +11,16 @@ return {
                 cond = vim.fn.executable('make') == 1
             },
         },
-        config = function()
-            local telescope_builtin = require('telescope.builtin')
-            local telescope_extensions = require('telescope').extensions
-            local wk = require('which-key')
-
-            -- Enable telescope fzf native, if installed
-            pcall(require('telescope').load_extension, 'fzf')
-
-            wk.register({
-                ['<C-p>'] = { telescope_builtin.find_files, 'Telescope Fuzzy File Finder' },
-                ['<C-b>'] = { telescope_builtin.buffers, 'Telescope Buffers Browser' },
-                ['<C-f>'] = { telescope_extensions.file_browser.file_browser, 'Telescope File Browser' },
-                ['<C-g>'] = { telescope_builtin.live_grep, 'Telescope Live Grep' },
-            })
-
-            wk.register({
-                g = {
-                    name = 'Telescope Git',
-                    f = { telescope_builtin.git_files, 'Git files' },
-                    c = { telescope_builtin.git_commits, 'Git Commits' },
-                    b = { telescope_builtin.git_branches, 'Git Branches' },
-                    s = { telescope_builtin.git_stash, 'Git Stash' },
-                },
-            }, { prefix = '<Leader>' })
-        end,
+        keys = {
+            { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Telescope Fuzzy File Finder" },
+            { "<C-b>", "<cmd>Telescope buffers<cr>", desc = "Telescope Buffers Browser" },
+            { "<C-f>", "<cmd>Telescope file_browser<cr>", desc = "Telescope File Browser" },
+            { "<C-g>", "<cmd>Telescope live_grep<cr>", desc = "Telescope Live Grep" },
+            { "<Leader>g", group = "Telescope Git" },
+            { "<Leader>gb", "<cmd>Telescope git_files<cr>", desc = "Git Branches" },
+            { "<Leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+            { "<Leader>gf", "<cmd>Telescope git_branches<cr>", desc = "Git files" },
+            { "<Leader>gs", "<cmd>Telescope git_stash<cr>", desc = "Git Stash" },
+        }
     },
 }

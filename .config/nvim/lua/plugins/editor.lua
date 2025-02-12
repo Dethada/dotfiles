@@ -45,8 +45,8 @@ return {
 
             local wk = require('which-key')
 
-            wk.register({
-            ["<space>u"] = { '<Cmd>UndotreeToggle<CR>', 'Undotree Toggle' },
+            wk.add({
+                { "<space>u", "<Cmd>UndotreeToggle<CR>", desc = "Undotree Toggle" },
             })
         end,
     },
@@ -78,12 +78,5 @@ return {
                 hop.hint_lines()
             end, {remap=true})
         end,
-    },
-
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
 }
