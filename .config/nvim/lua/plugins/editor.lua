@@ -79,4 +79,9 @@ return {
             end, {remap=true})
         end,
     },
+
+    {
+        "OXY2DEV/markview.nvim",
+        lazy = false
+    },
 }

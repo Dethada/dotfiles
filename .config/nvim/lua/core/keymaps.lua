@@ -32,3 +32,4 @@ vim.keymap.set('n', '<Space>q', '<Cmd>bp|bd #<CR>')
 
 -- paste in visual mode while keeping current paste register
 vim.keymap.set('x', '<Space>p', '"_dP')
+
