@@ -7,9 +7,8 @@ return {
                 'williamboman/mason.nvim',
                 build = ':MasonUpdate',
             },
-            {
-                'williamboman/mason-lspconfig.nvim',
-            },
+            'williamboman/mason-lspconfig.nvim',
+            'saghen/blink.cmp',
         },
         config = function()
             local lspconfig = require('lspconfig')
@@ -51,7 +50,7 @@ return {
             end
 
             -- Setup lspconfig.
-            local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
 
             lspconfig.lua_ls.setup {
                 capabilities = capabilities,
