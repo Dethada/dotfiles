@@ -15,10 +15,6 @@ return {
 
             -- set build directory
             vim.g['vimtex_compiler_latexmk'] = { build_dir = 'build'}
-
-            -- Most VimTeX mappings rely on localleader and this can be changed with the
-            -- following line. The default is usually fine and is the symbol "\".
-            -- vim.cmd('let maplocalleader = ","')
         end
     },
 }

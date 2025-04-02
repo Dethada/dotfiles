@@ -1,4 +1,3 @@
-vim.g.mapleader = ','
 vim.o.encoding = 'utf-8'
 
 -- line number
