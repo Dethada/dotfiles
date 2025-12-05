@@ -4,7 +4,7 @@
 sudo pacman -Sy --noconfirm neovim universal-ctags tmux nodejs npm base-devel clang \
     openssh zsh tmux eza bat ripgrep jq fd wget tree docker docker-compose go fzf svn \
     lf poppler navi highlight yt-dlp entr zoxide unzip imagemagick ffmpeg p7zip yazi \
-    luarocks wezterm \
+    luarocks wezterm man-pages \
     python python-pip python-black python-isort
 
 paru -S pay-respects-bin
