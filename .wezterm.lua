@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+config.enable_wayland = true
+
 -- Performance
 config.max_fps = 144
 -- How many lines of scrollback to retain per tab
@@ -10,7 +12,7 @@ config.scrollback_lines = 5000
 config.color_scheme = 'Catppuccin Macchiato'
 config.font = wezterm.font('Hack Nerd Font', { weight = 'Medium' })
 config.font_size = 12
-config.window_decorations = 'RESIZE'
+config.window_decorations = 'NONE'
 
 -- Inactive panes
 config.inactive_pane_hsb = {
