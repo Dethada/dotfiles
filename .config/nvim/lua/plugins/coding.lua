@@ -13,9 +13,11 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         version = false,
+        branch = 'master',
         build = ':TSUpdate',
         dependencies = {
             'nvim-treesitter/nvim-treesitter-textobjects',
+            branch = 'master'
         },
         config = function()
             local configs = require("nvim-treesitter.configs")
@@ -30,7 +32,7 @@ return {
                 -- List of parsers to ignore installing (for "all")
                 -- phpdoc and tree-sitter-phpdoc errors on m1
                 -- use vimtex syntax highlighter for vimtex features
-                ignore_install = { 'phpdoc', 'tree-sitter-phpdoc', 'latex' },
+                ignore_install = { 'phpdoc', 'tree-sitter-phpdoc', 'latex', 'ipkg' },
 
                 highlight = {
                     -- `false` will disable the whole extension
