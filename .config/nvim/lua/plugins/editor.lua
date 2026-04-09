@@ -32,26 +32,16 @@ return {
     },
 
     {
-        'mbbill/undotree',
-        config = function()
-            vim.g['undotree_WindowLayout'] = 3
-            vim.g['undotree_SetFocusWhenToggle'] = 1
-            vim.g['undotree_ShortIndicators'] = 1
-
-            local wk = require('which-key')
-
-            wk.add({
-                { "<space>u", "<Cmd>UndotreeToggle<CR>", desc = "Undotree Toggle" },
-            })
-        end,
-    },
-
-    {
         'ntpeters/vim-better-whitespace',
         config = function()
             vim.g['strip_whitespace_on_save'] = 1
             vim.g['strip_whitespace_confirm'] = 0
         end,
+    },
+
+    {
+        'mcauley-penney/visual-whitespace.nvim',
+        event = "ModeChanged *:[vV\22]", -- lazy load on entering visual mode
     },
 
     {
@@ -81,11 +71,8 @@ return {
     },
 
     {
-        "chrisgrieser/nvim-spider",
-        keys = {
-            { "w", "<cmd>lua require('spider').motion('w')<CR>", mode = { "n", "o", "x" } },
-            { "e", "<cmd>lua require('spider').motion('e')<CR>", mode = { "n", "o", "x" } },
-            { "b", "<cmd>lua require('spider').motion('b')<CR>", mode = { "n", "o", "x" } },
-        },
+        "chentoast/marks.nvim",
+        event = "VeryLazy",
+        opts = {},
     },
 }

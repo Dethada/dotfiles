@@ -42,3 +42,8 @@ if vim.fn.has('wsl') == 1 then
         group = yankGrp,
     })
 end
+
+-- undotree
+vim.cmd.packadd('nvim.undotree')
+vim.keymap.set('n', '<space>u', require('undotree').open)
+

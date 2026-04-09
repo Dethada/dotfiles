@@ -13,19 +13,11 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
-    -- smooth scrolling
-    {
-        'karb94/neoscroll.nvim',
-        config = function ()
-            require('neoscroll').setup {}
-        end
-    },
-
     -- hex color preview
     {
-        'norcalli/nvim-colorizer.lua',
+        'brenoprata10/nvim-highlight-colors',
         config = function()
-            require('colorizer').setup()
+            require('nvim-highlight-colors').setup()
         end,
     },
 
