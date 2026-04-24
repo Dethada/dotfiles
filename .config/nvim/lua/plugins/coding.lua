@@ -101,12 +101,6 @@ return {
         'JoosepAlviste/nvim-ts-context-commentstring',
     },
 
-    -- Automatically add closing tags for HTML and JSX
-    {
-        'windwp/nvim-ts-autotag',
-        opts = {},
-    },
-
     -- Show symbols in file
     {
         'stevearc/aerial.nvim',
