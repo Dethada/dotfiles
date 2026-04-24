@@ -12,12 +12,6 @@ return {
         },
     },
 
-    -- more text objects
-    {
-        'echasnovski/mini.ai',
-        version = false,
-    },
-
     {
         'windwp/nvim-autopairs',
         event = 'InsertEnter',
@@ -42,12 +36,6 @@ return {
     {
         'mcauley-penney/visual-whitespace.nvim',
         event = "ModeChanged *:[vV\22]", -- lazy load on entering visual mode
-    },
-
-    {
-        'github/copilot.vim',
-        build = ':Copilot setup',
-        event = "InsertEnter",
     },
 
     {
