@@ -107,14 +107,26 @@ return {
         opts = {},
     },
 
+    -- Show symbols in file
     {
-        'majutsushi/tagbar',
+        'stevearc/aerial.nvim',
+        opts = {},
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons"
+        },
         config = function()
-            local wk = require('which-key')
+            require("aerial").setup({
+                -- Priority list of preferred backends for aerial.
+                backends = {  "lsp", "treesitter", "markdown", "asciidoc", "man" },
 
-        wk.add({
-            { "<space>t", "<Cmd>TagbarToggle<CR>", desc = "Tagbar Toggle" },
-        })
+                default_direction = "prefer_right",
+
+                -- show all kinds of symbols
+                filter_kind = false,
+            })
+
+            vim.keymap.set("n", "<space>t", "<cmd>AerialNavToggle<CR>")
         end,
     },
 
