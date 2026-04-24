@@ -133,7 +133,34 @@ return {
     -- Git stuff
     {
         'lewis6991/gitsigns.nvim',
-        opts = {},
+        config = function()
+            require('gitsigns').setup({
+                current_line_blame = true,
+                on_attach = function(bufnr)
+                    local gs = package.loaded.gitsigns
+
+                    vim.keymap.set('n', '<leader>gb', function()
+                        -- Close if already open
+                        for _, winid in ipairs(vim.api.nvim_list_wins()) do
+                            if vim.w[winid].gitsigns_preview == 'blame' then
+                                vim.api.nvim_win_close(winid, true)
+                                return
+                            end
+                        end
+                        -- Open and focus
+                        gs.blame_line({ full = true })
+                        vim.defer_fn(function()
+                            for _, winid in ipairs(vim.api.nvim_list_wins()) do
+                                if vim.w[winid].gitsigns_preview == 'blame' then
+                                    vim.api.nvim_set_current_win(winid)
+                                    break
+                                end
+                            end
+                        end, 100)
+                    end)
+                end
+            })
+        end,
     },
 
     {
