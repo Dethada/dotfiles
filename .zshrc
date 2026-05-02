@@ -92,29 +92,12 @@ function y() {
     rm -f -- "$tmp"
 }
 
-# use nvim as manpager `:h Man`
-export MANPAGER='nvim +Man!'
-export MANWIDTH=999
-export EDITOR='nvim'
-export VISUAL=$EDITOR
-export PATH="/opt/homebrew/bin:$PATH"
-export GPG_TTY=$(tty)
-export TERM=xterm-256color
-
 # navi shell widget
 eval "$(navi widget zsh)"
 
 # zoxide
 eval "$(zoxide init zsh)"
 alias cd='z'
-
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:$HOME/.local/bin
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
-. "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh)"
 
