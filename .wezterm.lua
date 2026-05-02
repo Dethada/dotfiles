@@ -10,8 +10,9 @@ config.scrollback_lines = 5000
 
 -- Appearance
 config.color_scheme = 'Catppuccin Macchiato'
-config.font = wezterm.font('Hack Nerd Font', { weight = 'Medium' })
+config.font = wezterm.font('Iosevka Term', { weight = 'Medium' })
 config.font_size = 12
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.window_decorations = 'NONE'
 
 -- Inactive panes
