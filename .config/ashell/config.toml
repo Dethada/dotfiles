@@ -14,7 +14,10 @@ mode = "Title"
 truncate_title_after_length = 100
 
 [system_info]
-indicators = [ "Cpu", "Memory" ]
+indicators = [ "Cpu", "Memory", "Temperature" ]
+
+[system_info.temperature]
+sensor = "coretemp Package id 0"
 
 [settings]
 lock_cmd = "hyprlock &"
