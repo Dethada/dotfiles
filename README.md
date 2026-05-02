@@ -24,34 +24,27 @@ dotfiles checkout
 
 Run the setup script
 ```bash
-~/setup-system.sh
+~/setup-arch.sh
 ```
+
+### Nvim
+Required to compile treesitter parsers
+```
+cargo binstall tree-sitter-cli
+```
+
 ### Tmux
 Press prefix + I (capital i, as in Install) to fetch plugins.
 
 ## Common
 - Shell: zsh
 - Terminal: wezterm
-- Editor: nvim
+- Editor: neovim
 - File manger: yazi
 
-## OSX
-
-Use [karabiner-elements](https://github.com/pqrs-org/Karabiner-Elements) to modify key mappings (Useful for using colemak layout).
-
-- WM: yabai
-- Bar: sketchybar
-- Hotkey Daemon: skhd
-
-## Linux Wayland
-- WM: hyperland
-- Bar: hyperland
-- Hotkey Daemon: hyperland
-
-## Linux Xserver
-- WM: Bspwm
-- Bar: polybar
-- Hotkey Daemon: sxhkd
+## Linux
+- WM: hyprland
+- Bar: ashell
 
 ## Windows
 https://github.com/Dethada/windots

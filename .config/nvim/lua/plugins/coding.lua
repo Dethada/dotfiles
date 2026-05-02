@@ -13,78 +13,61 @@ return {
     {
         'nvim-treesitter/nvim-treesitter',
         version = false,
-        branch = 'master',
+        branch = 'main',
+        lazy = false,
         build = ':TSUpdate',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter-textobjects',
-            branch = 'master'
-        },
         config = function()
-            local configs = require("nvim-treesitter.configs")
+            local ts_langs = { 'bash', 'c', 'cpp', 'rust', 'python', 'powershell', 'lua', 'llvm', 'yaml', 'toml', 'json', 'markdown' }
+            require('nvim-treesitter').install(ts_langs)
 
-            configs.setup({
-                -- A list of parser names, or "all"
-                ensure_installed = "all",
-
-                -- Install parsers synchronously (only applied to `ensure_installed`)
-                sync_install = false,
-
-                -- List of parsers to ignore installing (for "all")
-                -- phpdoc and tree-sitter-phpdoc errors on m1
-                -- use vimtex syntax highlighter for vimtex features
-                ignore_install = { 'phpdoc', 'tree-sitter-phpdoc', 'latex', 'ipkg' },
-
-                highlight = {
-                    -- `false` will disable the whole extension
-                    enable = true,
-
-                    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
-                    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
-                    -- the name of the parser)
-                    -- list of language that will be disabled
-                    --[[ disable = { "c", "rust" }, ]]
-
-                    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-                    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-                    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-                    -- Instead of true it can also be a list of languages
-                    additional_vim_regex_highlighting = false,
-                },
-
-                indent = {
-                    enable = true
-                },
-
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<CR>",
-                        node_incremental = "<CR>",
-                        node_decremental = "<BS>",
-                        scope_incremental = "grc",
-                    },
-                },
-
-                textobjects = {
-                    select = {
-                        enable = true,
-                        lookahead = true,
-                        keymaps = {
-                            -- You can use the capture groups defined in textobjects.scm
-                            ["af"] = "@function.outer",
-                            ["if"] = "@function.inner",
-                            ["aC"] = "@class.outer",
-                            ["iC"] = "@class.inner",
-                            ["al"] = "@loop.outer",
-                            ["il"] = "@loop.inner",
-                            ["acl"] = "@call.outer",
-                            ["icl"] = "@call.inner",
-                            ["acd"] = "@conditional.outer",
-                            ["icd"] = "@conditional.inner",
-                        },
-                    }
-                },
+            vim.api.nvim_create_autocmd('FileType', {
+                pattern = ts_langs,
+                callback = function()
+                    vim.treesitter.start()
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
             })
+
+            -- incremental selection with <CR>
+            vim.keymap.set('n', '<CR>', 'van', { remap = true })
+            vim.keymap.set('x', '<CR>', 'an', { remap = true })
+            vim.keymap.set('x', '<BS>', 'in', { remap = true })
+            vim.keymap.set({ 'n', 'x' }, 'grc', ']n', { remap = true })
+        end,
+    },
+
+    {
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        branch = 'main',
+        init = function()
+            vim.g.no_plugin_maps = true
+        end,
+        config = function()
+            require("nvim-treesitter-textobjects").setup {
+                select = {
+                    lookahead = true,
+                    include_surrounding_whitespace = false,
+                },
+            }
+
+            local select = require("nvim-treesitter-textobjects.select")
+            local keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["aC"] = "@class.outer",
+                ["iC"] = "@class.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
+                ["acl"] = "@call.outer",
+                ["icl"] = "@call.inner",
+                ["acd"] = "@conditional.outer",
+                ["icd"] = "@conditional.inner",
+            }
+            for lhs, capture in pairs(keymaps) do
+                vim.keymap.set({ "x", "o" }, lhs, function()
+                    select.select_textobject(capture, "textobjects")
+                end)
+            end
         end,
     },
 
