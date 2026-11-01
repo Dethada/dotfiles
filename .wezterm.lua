@@ -77,7 +77,7 @@ config.debug_key_events = true
 local act = wezterm.action
 
 -- tmux
-config.leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 5000 }
+config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 5000 }
 config.keys = {
     {
         key = 'c',

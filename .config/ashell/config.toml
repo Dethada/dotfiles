@@ -1,10 +1,11 @@
+# https://malpenzibo.github.io/ashell/docs/configuratin
 log_level = "warn"
 position = "Top"
 
 [modules]
 left = [ "Workspaces" ]
 center = [ "WindowTitle" ]
-right = [ "SystemInfo", [ "swaync", "Clock", "Privacy", "Settings" ] ]
+right = [ "SystemInfo", [ "swaync", "Tempo", "Privacy", "Settings" ] ]
 
 [workspaces]
 enable_workspace_filling = true
@@ -12,6 +13,9 @@ enable_workspace_filling = true
 [window_title]
 mode = "Title"
 truncate_title_after_length = 100
+
+[tempo]
+clock_format = "%a %d %b %R"
 
 [system_info]
 indicators = [ "Cpu", "Memory", "Temperature" ]
